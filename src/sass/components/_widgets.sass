@@ -1,0 +1,42 @@
+.widgets
+    display: flex
+.widget
+    $this: &
+    width: 25%
+    height: 200px
+    +cover
+    display: flex
+    align-items: center
+    color: #fff
+    position: relative
+    &:before
+        content: ""
+        display: block
+        +coverdiv
+        background: rgba(0,0,0,.5)
+        z-index: 0
+        transition: opacity .25s ease-in-out
+    &:hover
+        &:before
+            opacity: 0
+        #{$this}__in
+            color: #fff
+    &__in
+        padding: 16px 0
+        position: relative
+        z-index: 1
+        color: $grey-light
+        transition: color .25s ease-in-out
+    &__numb
+        +rob-m
+        font-size: 64px
+        padding: 0 32px
+    &__desc
+        padding: 6px 16px 6px 32px
+        position: relative
+        background: $orange
+        border-top-right-radius: 100px
+        border-bottom-right-radius: 100px
+
+
+

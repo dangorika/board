@@ -1,0 +1,75 @@
+.form
+    +cover
+    &__title
+        color: #fff
+        &:before
+            display: none
+
+.form-box
+    width: 100%
+    max-width: 600px
+    margin: 0 auto
+    position: relative
+    padding: 32px 48px
+    &:hover
+        transform: none
+    &:before
+        content: ""
+        display: block
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 400px
+        max-width: 30%
+        background: $orange
+        height: 4px
+    &__text
+        +rob-m
+        font-size: 24px
+        margin-bottom: 36px
+
+.input
+    margin-bottom: 36px
+    text-align: left
+    &.is-valid
+        input
+            border-color: $orange
+    &.is-invalid
+        input
+            border-color: #ff0000
+            box-shadow: 1px 1px 12px 1px rgba(255,0,0,.25)
+    label
+        display: block
+        margin-bottom: 8px
+    input
+        width: 100%
+        height: 44px
+        border: 1px solid $grey
+        border-radius: 2px
+        font-size: 16px
+        +rob-r
+        padding: 0 12px
+        transition: border-color .25s ease-in-out
+        &:focus
+            border-color: $orange
+    &_special
+        display: flex
+        align-items: center
+        position: relative
+        input
+            border-radius: 100px
+            background: transparent
+            border-color: $orange
+            color: #fff
+            padding: 0 16px
+            +placeholder
+                color: #fff
+        .button
+            padding: 10px 20px 10px 16px
+            position: absolute
+            right: 0
+            top: 0
+            border-top-left-radius: 0
+            border-bottom-left-radius: 0
+            font-size: 16px

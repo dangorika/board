@@ -1,0 +1,44 @@
+.faq
+    background: $grey-light
+    &__list
+        text-align: left
+
+.f-item
+    $this: &
+    margin-bottom: 36px
+    &.is-active
+        #{$this}__title
+            color: $black
+    &__title
+        padding: 12px 0
+        +rob-m
+        font-weight: normal
+        cursor: pointer
+        transition: color .25s ease-in-out
+        color: rgba(0,0,0,.5)
+        &:hover
+            color: $black
+    &__list
+        ul
+            padding-left: 16px
+        li
+            position: relative
+            padding-left: 32px
+            margin-bottom: 8px
+            &:before
+                content: ""
+                width: 24px
+                height: 24px
+                background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgYmFzZVByb2ZpbGU9InRpbnkiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPiAgPHBhdGggZD0iTTIyLjE4NiAxMC41MmwtOC4xMzIgOC4xMzItNC4yNC00LjI0MUw4LjQgMTUuODI1bDUuNjU0IDUuNjU1IDkuNTQ2LTkuNTQ2eiIgZmlsbD0iI2VhNjMyZiIgLz48L3N2Zz4=)
+                background-repeat: no-repeat
+                background-position: 50% 50%
+                background-size: contain
+                position: absolute
+                top: 2px
+                left: 0
+        a
+            color: $orange
+            text-decoration: none
+            transition: opacity .25s ease-in-out
+            &:hover
+                opacity: .75

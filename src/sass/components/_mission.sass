@@ -1,0 +1,36 @@
+.mission
+    +cover
+    &__in
+        display: flex
+        align-items: center
+    &__info
+        width: 50%
+        color: #fff
+        padding: 0 64px 0 0
+        margin-top: -10px
+    &__text
+        font-size: 18px
+    &__media
+        width: 50%
+        position: relative
+        img
+            max-width: 100%
+            display: block
+.btn-play
+    +vcenter
+    border: 2px solid $orange
+    width: 72px
+    height: 72px
+    border-radius: 50%
+    background: none
+    font-size: 28px
+    opacity: .8
+    transition: transform .25s ease-in-out, opacity .25s ease-in-out
+    &:hover
+        transform: translate(-50%, -50%) scale(1.2)
+        opacity: 1
+    .icon
+        fill: $orange
+        +vcenter
+        display: block
+        margin-left: 3px

@@ -1,0 +1,52 @@
+.hero
+    min-height: 100vh
+    background: $black
+    color: #fff
+    position: relative
+    overflow: hidden
+    &__bg
+        +coverdiv
+        z-index: 0
+        &:before
+            content: ""
+            display: block
+            +coverdiv
+            background: rgba(0,0,0,.5)
+            z-index: 3
+        &:after
+            content: ""
+            display: block
+            +coverdiv
+            background-size: 4px 4px
+            background-image: radial-gradient(circle, #000 1px, transparent 1px)
+            background-repeat: repeat
+            z-index: 4
+        img, video
+            width: 150%
+            height: 150%
+            object-fit: cover
+            +vcenter
+        img
+            z-index: 1
+        video
+            z-index: 2
+    &__in
+        padding-top: 60px
+        width: 100%
+        max-width: 960px
+        margin: 0 auto
+        +vcenter
+        z-index: 1
+        text-align: center
+    &__title
+        +rob-r
+        font-weight: normal
+        font-size: 48px
+        line-height: 1.33
+        margin-bottom: 48px
+    &__text
+        font-size: 22px
+        line-height: 1.5
+        max-width: 720px
+        margin: 0 auto 48px
+

@@ -1,0 +1,44 @@
+.mentors
+    &__list
+        display: flex
+        flex-wrap: wrap
+        padding-top: 36px
+        width: calc(100% + 24px)
+.mentor
+    width: calc(20% - 24px)
+    margin: 0 24px 24px 0
+    padding: 24px
+    height: 240px
+    position: relative
+    display: flex
+    color: #fff
+    &:before
+        content: ""
+        display: block
+        +coverdiv
+        background: $grey
+        z-index: -1
+    &:after
+        content: ""
+        display: block
+        +coverdiv
+        background-image: linear-gradient(to bottom, transparent 0%, $orange 100%)
+    &__in
+        position: relative
+        z-index: 1
+        width: 100%
+        align-self: flex-end
+        text-align: center
+    &__pic
+        display: block
+        height: 90%
+        position: absolute
+        left: 50%
+        bottom: 0
+        transform: translateX(-50%)
+    &__name
+        +rob-r
+        font-weight: normal
+        font-size: 18px
+        letter-spacing: 1px
+        margin-bottom: 12px

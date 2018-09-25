@@ -1,0 +1,41 @@
+.header
+    border-bottom: 10px solid $orange
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 100
+    &__in
+        display: flex
+        height: 60px
+    &__logo
+        width: 190px
+        align-self: flex-end
+        position: relative
+        top: 14px
+    &__nav
+        flex-grow: 1
+        text-align: right
+        align-self: center
+
+.nav
+    a
+        +rob-r
+        text-decoration: none
+        color: #fff
+        padding: 8px 12px
+        margin-left: 8px
+        position: relative
+        transition: color .25s ease-in-out
+        &:hover
+            color: $orange
+            .icon
+                fill: $orange
+    .icon
+        fill: #fff
+        font-size: 16px
+        display: inline-block
+        vertical-align: middle
+        position: relative
+        top: -1px
+        transition: fill .25s ease-in-out

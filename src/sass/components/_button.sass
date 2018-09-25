@@ -1,0 +1,44 @@
+.button
+    appearance: none
+    z-index: 1
+    display: inline-block
+    position: relative
+    overflow: hidden
+    +rob-r
+    padding: 16px 36px
+    border-radius: 100px
+    text-decoration: none
+    border: 1px solid $orange
+    background: transparent
+    color: #fff
+    font-size: 18px
+    white-space: nowrap
+    transition: color .4s
+    &:before
+        content: ""
+        +coverdiv
+        transform: translateX(0) skew(0)
+        transition: transform .4s
+        background: $orange
+        z-index: -2
+    &:hover
+        color: $orange
+        &:before
+            transform: translateX(-120%) skew(-45deg)
+    &_special
+        padding: 6px 12px
+        font-size: 14px
+        border-color: #fff
+        &:before
+            background: #fff
+            transform: translateX(-110%) skew(-45deg)
+        &:hover
+            color: $orange
+            &:before
+                transform: translateX(0) skew(0)
+    .icon
+        fill: currentColor
+        display: inline-block
+        vertical-align: middle
+        margin: -1px 4px 0 0
+
