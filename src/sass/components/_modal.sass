@@ -43,35 +43,31 @@
         font-size: 32px
         position: absolute
         z-index: 2
-        top: 12px
-        right: 24px
         background: none
         border: none
         border-radius: 0
-        +md
-            top: 8px
-            right: 8px
+        top: 8px
+        right: 8px
+        transition: opacity .25s ease-in-out
         +xs
             width: 24px
             height: 24px
             font-size: 24px
-            top: 4px
-            right: -2px
+        &:hover
+            opacity: .5
         .icon
-            fill: #fff
+            fill: $black
         &_special
             top: 8px
             right: 8px
-            +md
-                top: 8px
-                right: 8px
-            +xs
-                top: 8px
-                right: 8px
+            .icon
+                fill: #fff
     &__in
         position: relative
         z-index: 1
         width: 100%
+        max-width: 960px
+        margin: 0 auto
         height: 100%
         flex-grow: 1
         overflow-y: auto
@@ -102,12 +98,12 @@
         padding: 24px 32px
         padding: 12px 20px
     &__info
-        padding: 24px 32px
+        padding: 48px 32px 24px
         text-align: left
         font-size: 16px
         line-height: 1.5
         +xs
-            padding: 12px 20px
+            padding: 24px 20px 12px
             font-size: 14px
         p
             margin-bottom: 24px
