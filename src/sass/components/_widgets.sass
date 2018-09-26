@@ -1,5 +1,6 @@
 .widgets
     display: flex
+    flex-wrap: wrap
 .widget
     $this: &
     width: 25%
@@ -9,6 +10,10 @@
     align-items: center
     color: #fff
     position: relative
+    +md
+        width: 50%
+    +xs
+        width: 100%
     &:before
         content: ""
         display: block
@@ -31,12 +36,16 @@
         +rob-m
         font-size: 64px
         padding: 0 32px
+        +md
+            font-size: 48px
     &__desc
-        padding: 6px 16px 6px 32px
+        font-size: 14px
+        padding: 4px 32px 4px 32px
         position: relative
         background: $orange
         border-top-right-radius: 100px
         border-bottom-right-radius: 100px
+        display: inline-block
 
 
 

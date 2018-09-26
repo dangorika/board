@@ -2,6 +2,7 @@
     background: $grey-light
     &__boxes
         display: flex
+        flex-wrap: wrap
         max-width: 960px
         margin: 0 auto
         padding-top: 36px
@@ -10,6 +11,11 @@
     $this: &
     padding: 0 32px
     width: 25%
+    +md
+        width: 50%
+        margin-bottom: 32px
+    +xs
+        width: 100%
     &:hover
         #{$this}__text:before
             transform: translateX(-50%) scale(1)
@@ -20,6 +26,8 @@
         height: 64px
         margin-bottom: 24px
         transition: transform .25s ease-in-out
+        +md
+            margin-bottom: 16px
     &__text
         +rob-r
         font-weight: normal

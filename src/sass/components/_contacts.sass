@@ -5,16 +5,26 @@
         border-radius: 4px
         max-width: 960px
         margin: 0 auto 48px
+        +md
+            padding: 24px 48px
+        +xs
+            padding: 18px 24px
+            margin-bottom: 24px
     &__name
         +rob-m
         font-weight: normal
         font-size: 24px
         color: #000
+        +xs
+            font-size: 18px
     &__position
         +rob-r
         font-weight: normal
         font-size: 18px
         margin-bottom: 24px
+        +xs
+            font-size: 14px
+            margin-bottom: 14px
     &__pic
         max-width: 600px
         margin: 0 auto
@@ -34,6 +44,9 @@
     &__phone
         font-size: 24px
         margin-bottom: 48px
+        +xs
+            font-size: 18px
+            margin-bottom: 24px
         a
             text-decoration: none
             color: currentColor
@@ -47,11 +60,23 @@
         width: 84px
         height: 84px
         text-decoration: none
+        +md
+            width: 64px
+            height: 64px
+        +xs
+            width: 36px
+            height: 36px
         &:not(:last-child)
             margin-right: 48px
+            +md
+                margin-right: 36px
+            +xs
+                margin-right: 24px
+
     .icon
         width: inherit
         height: inherit
         transition: fill .25s ease-in-out
-        &:not(:hover)
-            fill: $grey-light
+        +rmin(1024)
+            &:not(:hover)
+                fill: $grey-light

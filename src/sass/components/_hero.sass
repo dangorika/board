@@ -4,6 +4,10 @@
     color: #fff
     position: relative
     overflow: hidden
+    .l
+        min-height: inherit
+        display: flex
+        align-items: center
     &__bg
         +coverdiv
         z-index: 0
@@ -35,7 +39,7 @@
         width: 100%
         max-width: 960px
         margin: 0 auto
-        +vcenter
+        position: relative
         z-index: 1
         text-align: center
     &__title
@@ -44,9 +48,17 @@
         font-size: 48px
         line-height: 1.33
         margin-bottom: 48px
+        +md
+            font-size: 32px
+        +xs
+            font-size: 28px
     &__text
         font-size: 22px
         line-height: 1.5
         max-width: 720px
         margin: 0 auto 48px
+        +md
+            font-size: 18px
+        +xs
+            font-size: 16px
 

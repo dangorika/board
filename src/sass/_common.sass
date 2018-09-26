@@ -5,6 +5,9 @@ body
     line-height: 1.5
     color: $black
     background: #fff
+    &.is-fixed
+        overflow: hidden
+        height: 100vh
 
 .logo
     display: block
@@ -21,6 +24,12 @@ body
     position: relative
     display: inline-block
     margin-bottom: 36px
+    +md
+        font-size: 28px
+        margin-bottom: 28px
+    +xs
+        font-size: 24px
+        margin-bottom: 24px
     &:before
         content: ""
         display: block
@@ -37,6 +46,8 @@ body
     padding: 80px 0
     text-align: center
     overflow: hidden
+    +md
+        padding: 52px 0
 .orange
     color: $orange
 
@@ -45,11 +56,28 @@ body
     border-radius: 50%
     width: 64px
     height: 64px
-    position: fixed
+    position: sticky
     bottom: 20px
-    right: 20px
+    left: calc(100% - 20px - 64px)
+    display: block
+    transition: all .25s ease-in-out
+    opacity: 0
+    visibility: hidden
+    &.is-visible
+        opacity: 1
+        visibility: visible
+    +md
+        width: 36px
+        height: 36px
+        left: calc(100% - 10px - 32px)
+        bottom: 10px
     .icon
         fill: $orange
         font-size: 24px
         +vcenter
         margin-top: -2px
+        +md
+            font-size: 14px
+            margin-top: -1px
+    &:hover
+        opacity: .75

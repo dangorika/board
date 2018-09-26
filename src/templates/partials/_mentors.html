@@ -8,6 +8,7 @@
             <li>Владелец Брендингового агентства Headshot, траблшутинговой компании Luniter.</li>
             <li>Доктор экономических наук, стратег, футуролог.</li>
         </ul>',
+        logo: 'img/logo_tm.png',
         modal: 'modal_1'
     },
     {
@@ -205,27 +206,36 @@
 
 
 <!-- begin mentors -->
-<section class="section mentors">
+<section class="section mentors" id="mentors">
     <div class="l">
-        <div class="mentors__in">
+        <div class="mentors__in js-s">
             <h2 class="title">Менторы и наставники</h2>
 
-            <div class="mentors__list">
+            <div class="mentors__list js-s-content">
                 {% for m in mentors %}
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="{{ m.modal }}">
                     <img src="{{ m.pic }}" alt="" class="mentor__pic">
+                    {% if m.logo %}
+                    <div class="mentor__logo">
+                        <img src="{{ m.logo }}" alt="">
+                    </div>
+                    {% endif %}
                     <div class="mentor__in">
                         <h3 class="mentor__name">{{ m.name | safe }}</h3>
-                        <button class="button button_special" data-modal="{{ modal }}">Показать еще</button>
+                        <button class="button button_special">Показать еще</button>
                     </div>
                 </div>
                 <!-- end mentor -->
                 {% endfor %}
             </div>
 
-            <a href="#" class="button button_primary">{{ mixins.icon('refresh') }}Показать еще</a>
+            <a href="#" class="button button_primary js-s-button" data-change-text="Скрыть">{{ mixins.icon('refresh') }}Показать еще</a>
         </div>
     </div>
+
+    {% for m in mentors %}
+        {% include "partials/_mentor-modal.html" %}
+    {% endfor %}
 </section>
 <!-- end mentors -->

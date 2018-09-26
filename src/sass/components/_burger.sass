@@ -1,0 +1,45 @@
+.burger
+    $this: &
+    width: 47px
+    height: 47px
+    background: none
+    appearance: none
+    border: none
+    display: inline-block
+    vertical-align: middle
+    transition: transform .25s ease-in-out
+    &__in
+        display: block
+        margin: 0 auto
+        width: 21px
+        height: 22px
+        position: relative
+        & > span
+            display: block
+            width: 100%
+            height: 2px
+            background: #fff
+            position: absolute
+            top: 10px
+            left: 0
+            &:nth-child(1),
+            &:nth-child(3)
+                transition: top .15s ease-in .15s, transform .25s ease-in-out
+            &:nth-child(1)
+                top: 0
+            &:nth-child(3)
+                top: 20px
+            &:nth-child(2)
+                transition: opacity 0s linear .15s
+    &.is-active
+        #{$this}__in > span
+            &:nth-child(1),
+            &:nth-child(3)
+                top: 10px
+                transition: top .15s ease-in, transform .25s ease-in-out .15s
+            &:nth-child(2)
+                opacity: 0
+            &:nth-child(1)
+                transform: rotate(45deg)
+            &:nth-child(3)
+                transform: rotate(-45deg)

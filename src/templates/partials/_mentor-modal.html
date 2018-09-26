@@ -1,0 +1,32 @@
+<!-- begin modal -->
+<div class="modal" data-target-modal="{{ m.modal }}">
+    <button class="modal__close js-modal-close">
+        {{ mixins.icon('close') }}
+    </button>
+    <div class="modal__in">
+        <div class="modal__left">
+            <div class="modal__pic">
+                <img src="{{ m.pic }}" alt="">
+            </div>
+            <div class="modal__form">
+                <form action="" class="js-form">
+                    <div class="input">
+                        <label for="name">Имя и фамилия</label>
+                        <input type="text" name="name"  name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                        <label for="phone">Мобильный телефон</label>
+                        <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal__right">
+            <div class="modal__info">{{ m.text | safe }}</div>
+        </div>
+    </div>
+</div>
+<!-- end modal -->

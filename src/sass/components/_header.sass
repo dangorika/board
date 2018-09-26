@@ -1,4 +1,5 @@
 .header
+    $this: &
     border-bottom: 10px solid $orange
     position: absolute
     top: 0
@@ -8,6 +9,8 @@
     &__in
         display: flex
         height: 60px
+        +md
+            justify-content: space-between
     &__logo
         width: 190px
         align-self: flex-end
@@ -17,6 +20,30 @@
         flex-grow: 1
         text-align: right
         align-self: center
+        +md
+            transition: opacity .25s ease-in-out
+            visibility: hidden
+            opacity: 0
+            position: fixed
+            top: 0
+            right: 0
+            width: 256px
+            height: 100%
+            background: rgba(0,0,0,.9)
+            z-index: 1
+            padding-top: 100px
+            box-shadow: 2px 4px 16px rgba(0,0,0,.5)
+    &__burger
+        display: none
+        align-self: center
+        +md
+            position: relative
+            z-index: 2
+            display: block
+    &.is-open
+        #{$this}__nav
+            visibility: visible
+            opacity: 1
 
 .nav
     a
@@ -27,10 +54,15 @@
         margin-left: 8px
         position: relative
         transition: color .25s ease-in-out
+        +md
+            display: block
+            padding: 8px 20px
+            margin-bottom: 8px
         &:hover
             color: $orange
             .icon
                 fill: $orange
+
     .icon
         fill: #fff
         font-size: 16px

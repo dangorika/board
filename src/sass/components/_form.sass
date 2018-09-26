@@ -11,6 +11,8 @@
     margin: 0 auto
     position: relative
     padding: 32px 48px
+    +md
+        padding: 24px
     &:hover
         transform: none
     &:before
@@ -28,35 +30,52 @@
         +rob-m
         font-size: 24px
         margin-bottom: 36px
+        +md
+            font-size: 18px
 
 .input
     margin-bottom: 36px
     text-align: left
-    &.is-valid
-        input
-            border-color: $orange
-    &.is-invalid
-        input
-            border-color: #ff0000
-            box-shadow: 1px 1px 12px 1px rgba(255,0,0,.25)
+    position: relative
+    +md
+        margin-bottom: 24px
     label
         display: block
         margin-bottom: 8px
+        +md
+            font-size: 14px
+            margin-bottom: 4px
+        &.error
+            font-size: 12px
+            color: red
+            position: absolute
+            top: 100%
+            left: 6px
+            display: block
+            margin-top: 2px
     input
+        display: block
         width: 100%
         height: 44px
         border: 1px solid $grey
-        border-radius: 2px
+        border-radius: 100px
         font-size: 16px
         +rob-r
         padding: 0 12px
         transition: border-color .25s ease-in-out
+        +md
+            height: 40px
         &:focus
             border-color: $orange
+        &.error
+            border-color: #ff0000
+            box-shadow: 1px 1px 12px 1px rgba(255,0,0,.25)
     &_special
         display: flex
         align-items: center
         position: relative
+        +r(420)
+            flex-direction: column
         input
             border-radius: 100px
             background: transparent
@@ -65,6 +84,12 @@
             padding: 0 16px
             +placeholder
                 color: #fff
+            +r(420)
+                margin-bottom: 24px
+        label
+            &.error
+                +r(420)
+                    top: 38px
         .button
             padding: 10px 20px 10px 16px
             position: absolute
@@ -73,3 +98,21 @@
             border-top-left-radius: 0
             border-bottom-left-radius: 0
             font-size: 16px
+            +md
+                padding: 8px 16px 8px 12px
+            +r(420)
+                position: relative
+                border-top-left-radius: 100px
+                border-bottom-left-radius: 100px
+
+.form-success
+    visibility: hidden
+    opacity: 0
+    transition: all .25s ease-in-out
+    color: $orange
+    font-size: 14px
+    position: relative
+    top: 10px
+    &.is-visible
+        visibility: visible
+        opacity: 1

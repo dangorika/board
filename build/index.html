@@ -16,7 +16,7 @@
     <div class="out">
       <div class="in">
         <!-- begin header -->
-        <header class="header">
+        <header class="header js-header">
           <div class="l">
             <div class="header__in">
               <!-- begin header__logo -->
@@ -29,11 +29,11 @@
               <!-- begin header__nav -->
               <div class="header__nav">
                 <nav class="nav">
-                  <a href="#">Статистика</a>
-                  <a href="#">Ценности</a>
-                  <a href="#">Почему Board</a>
-                  <a href="#">Менторы</a>
-                  <a href="#">FAQ</a>
+                  <a href="#statistics">Статистика</a>
+                  <a href="#values">Ценности</a>
+                  <a href="#reasons">Почему Board</a>
+                  <a href="#mentors">Менторы</a>
+                  <a href="#faq">FAQ</a>
                   <a href="tel:+380957512095">
                     <svg class="icon icon-phone">
                       <use xlink:href="img/sprite.svg#icon-phone"></use>
@@ -41,12 +41,23 @@
                 </nav>
               </div>
               <!-- end header__nav -->
+              <!-- begin header__burger -->
+              <div class="header__burger">
+                <button class="burger js-burger">
+                  <span class="burger__in">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                </button>
+              </div>
+              <!-- end header__burger -->
             </div>
           </div>
         </header>
         <!-- end header -->
         <!-- begin hero -->
-        <section class="hero">
+        <section class="hero" id="statistics">
           <div class="hero__bg bg">
             <img class="bg__img" src="img/video-placeholder.jpg" alt="">
             <video autoplay muted loop id="bg-video" data-src="img/video-bg.webm">
@@ -59,13 +70,13 @@
               <div class="hero__text">
                 <p>Возможность совершить прорыв в бизнесе за счет доступа к опыту, компетенциям и связям успешных предпренимателей и экспертов.</p>
               </div>
-              <a href="#" class="button">Я с вами</a>
+              <a href="#widgets" class="button js-scroll-to">Я с вами</a>
             </div>
           </div>
         </section>
         <!-- end hero -->
         <!-- begin widgets -->
-        <section class="widgets">
+        <section class="widgets" id="widgets">
           <!-- begin widget -->
           <div class="widget" style="background-image: url('img/widgets/f_1.jpg');">
             <div class="widget__in">
@@ -112,7 +123,7 @@
               </div>
               <div class="mission__media">
                 <img src="img/mission-preview.jpg" alt="">
-                <button class="btn-play" data-popup="mission">
+                <button class="btn-play" data-modal="mission">
                   <svg class="icon icon-play">
                     <use xlink:href="img/sprite.svg#icon-play"></use>
                   </svg>
@@ -120,10 +131,22 @@
               </div>
             </div>
           </div>
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="mission">
+            <div class="modal__video">
+              <button class="modal__close modal__close_special js-modal-close">
+                <svg class="icon icon-close">
+                  <use xlink:href="img/sprite.svg#icon-close"></use>
+                </svg>
+              </button>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/AF6HLxUod8w?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+          <!-- end modal -->
         </section>
         <!-- end mission -->
         <!-- begin values -->
-        <section class="section values">
+        <section class="section values" id="values">
           <div class="l">
             <div class="values__in">
               <h2 class="title">Ценности</h2>
@@ -164,7 +187,7 @@
               <h2 class="title">Преимущества</h2>
               <div class="advantages__boxes">
                 <!-- begin box -->
-                <div class="box">
+                <div class="advantage box">
                   <img src="img/advantages/advantage-1.png" alt="" class="box__img">
                   <div class="box__text">
                     <p>Внутренняя электронная коммуникация для решения бизнес-задач, поиска партнеров, клиентов, инвесторов.</p>
@@ -172,7 +195,7 @@
                 </div>
                 <!-- end box -->
                 <!-- begin box -->
-                <div class="box">
+                <div class="advantage box">
                   <img src="img/advantages/advantage-2.png" alt="" class="box__img">
                   <div class="box__text">
                     <p>Доступ к связям 1000 участников сообщества</p>
@@ -180,7 +203,7 @@
                 </div>
                 <!-- end box -->
                 <!-- begin box -->
-                <div class="box">
+                <div class="advantage box">
                   <img src="img/advantages/advantage-3.png" alt="" class="box__img">
                   <div class="box__text">
                     <p>Решение бизнес вопросов с помощью опытных наставников и менторов</p>
@@ -188,7 +211,7 @@
                 </div>
                 <!-- end box -->
                 <!-- begin box -->
-                <div class="box">
+                <div class="advantage box">
                   <img src="img/advantages/advantage-4.png" alt="" class="box__img">
                   <div class="box__text">
                     <p>Камерный формат общения, группы не более 12 человек.</p>
@@ -196,7 +219,7 @@
                 </div>
                 <!-- end box -->
                 <!-- begin box -->
-                <div class="box">
+                <div class="advantage box">
                   <img src="img/advantages/advantage-5.png" alt="" class="box__img">
                   <div class="box__text">
                     <p>Возможность обмена опытом и связями с предпринимателями в 16 регионах Украины.</p>
@@ -209,7 +232,7 @@
         </section>
         <!-- end advantages -->
         <!-- begin reasons -->
-        <section class="section reasons" style="background-image: url('img/reasons-bg.jpg');">
+        <section class="section reasons" id="reasons" style="background-image: url('img/reasons-bg.jpg');">
           <div class="l">
             <div class="reasons__in">
               <h2 class="title">Почему Board</h2>
@@ -221,200 +244,898 @@
                   <li>Все построено на практике и решении конкретных задач участников</li>
                 </ul>
               </div>
-              <a href="#" class="button">Подать заявку</a>
+              <a href="#register" class="button js-scroll-to">Подать заявку</a>
             </div>
           </div>
         </section>
         <!-- end reasons -->
         <!-- begin mentors -->
-        <section class="section mentors">
+        <section class="section mentors" id="mentors">
           <div class="l">
-            <div class="mentors__in">
+            <div class="mentors__in js-s">
               <h2 class="title">Менторы и наставники</h2>
-              <div class="mentors__list">
+              <div class="mentors__list js-s-content">
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_1">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
+                  <div class="mentor__logo">
+                    <img src="img/logo_tm.png" alt="">
+                  </div>
                   <div class="mentor__in">
                     <h3 class="mentor__name">Андрей<br>Длигач</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_2">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Петр<br>Синегуб</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_3">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Ирина<br>Берющева</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_4">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Николай<br>Палиенко</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_5">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Фёдор<br>Дроздовский</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_6">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Влад<br>Гуристримба</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_7">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Алексей<br>Виноградов</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_8">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Олег<br>Спиженко</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_9">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Алла<br>Заднепровская</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_10">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Давид<br>Браун</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_11">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Григорий<br>Маленко</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_12">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Светлана<br>Коломиец</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_13">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Максим<br>Рабинович</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_14">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Ирина<br>Озимок</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_15">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Роман<br>Романчук</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_16">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Константин<br>Паскевич</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
                 <!-- begin mentor -->
-                <div class="mentor">
+                <div class="mentor" data-modal="modal_17">
                   <img src="img/mentors/pic_2.png" alt="" class="mentor__pic">
                   <div class="mentor__in">
                     <h3 class="mentor__name">Александр<br>Павловский</h3>
-                    <button class="button button_special" data-modal="">Показать еще</button>
+                    <button class="button button_special">Показать еще</button>
                   </div>
                 </div>
                 <!-- end mentor -->
               </div>
-              <a href="#" class="button button_primary">
+              <a href="#" class="button button_primary js-s-button" data-change-text="Скрыть">
                 <svg class="icon icon-refresh">
                   <use xlink:href="img/sprite.svg#icon-refresh"></use>
                 </svg> Показать еще</a>
             </div>
           </div>
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_1">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <p>Бизнесмен, наставник</p>
+                  <ul>
+                    <li>Владелец и CEO группы компаний Advanter Group.</li>
+                    <li>Владелец Брендингового агентства Headshot, траблшутинговой компании Luniter.</li>
+                    <li>Доктор экономических наук, стратег, футуролог.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_2">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <p>Серийный бизнесмен, наставник, инвестор.</p>
+                  <p>Основной бизнес: Группа Компаний Мир Весов-производство в Украине всех видов весов.</p>
+                  <p>Работает на рынках СНГ и Европы.</p>
+                  <p>За последние 2 года создал следующие бизнесы: Бизнес Академию 4Smart, Гагарин, Рекрутинговый Бутик “Aist”, Ютюб канал для предпринимателей «Бизнес18+», Anykey (внедрение систем управления бизнесом), Сообщество Менторов и Наставников.</p>
+                  <p>Является членом CEO клуб, Лига клуб, СУП, КДЛ, ТПП.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_3">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <ul>
+                    <li>Управляющий партнёр бизнес-сообщества BOARD.</li>
+                    <li>Психолог, автор более 20 научных публикаций по социальной психологии.</li>
+                    <li>Lifestyle блогер, актриса любительского театра, активная участница беговых и плавательных марафонов.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_4">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <ul>
+                    <li>Генеральный директор и сооснователь украинской продуктовой IT-компании EVO, которая объединяет крупные маркетплейсы и онлайн-сервисы в Украине, Беларуси и Казахстане (Prom.ua, Satu.kz Bigl.ua, Kabanchik.ua, Shafa.ua, Crafta.ua, Zakupki.Prom.ua, Vchasno.com.ua и другие).</li>
+                    <li>В 2008 году совместно с Денисом Горовым и Тарасом Марашко создал крупнейший маркетплейс Украины Prom.ua.</li>
+                    <li>В 2015 году Николай признан «Человеком года в индустрии ритейла и e-commerce» по версии E-Awards-2015.</li>
+                    <li>Опыт в предпринимательстве – 10 лет.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_5">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <ul>
+                    <li>Основатель Свит Донатс, производство выпечки.</li>
+                    <li>Основатель Golden Silver, ювелирное производство.</li>
+                    <li>Основатель Uma&Umi, бренд детских ювелирных украшений.</li>
+                    <li>Акционер ThinkGlobal, Альтернативная общеобразовательная школа.</li>
+                    <li>Управляющий партнёр Мегого, крупнейшая в мире онлайн-видео платформа для русскоязычной аудитории.</li>
+                    <li>КМС по греко-римской борьбе, отец 2 детей, филантроп.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_6">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <p>Опытный бизнесмен</p>
+                  <ul>
+                    <li>Совладелец корпорации «Биосфера», лидера рынка товаров для дома и гигиены в Украине (торговые марки «Фрекен БОК», Smile, Novita и др.)</li>
+                    <li>Совладелец сети ресторанов Vapiano в Украине, среди которых ресторан в Киеве в 2017 году был признан лучшим рестораном франшизы Vapiano worldwide.</li>
+                    <li>Соучредитель Biosphere Startup Platform – бизнес-акселератора на платформе Concepter для поиска технологичных стартапов.</li>
+                    <li>Отец 5 детей, триатлонист.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_7">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <ul>
+                    <li>Вице-президент Международного института менеджмента (МИМ-Киев).</li>
+                    <li>Экс-руководитель маркетинговых проектов в компаниях Priocom, P5 Communications Inc., IDC.</li>
+                    <li>Кандидат экономических наук.</li>
+                    <li>Имеет ценный опыт руководства крупными маркетинг-проектами в компаниях с иностранным капиталом.</li>
+                    <li>Автор более 40 публикаций по маркетингу.</li>
+                    <li>Отец прекрасной дочери.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_8">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <ul>
+                    <li>Основатель, генеральный директор Центра Онкологии Клиника Спиженко.</li>
+                    <li>Основатель в Спілка Українських Підприємців – СУП.</li>
+                    <li>Советник министра в Кабинете Министров Украины.</li>
+                    <li>Отец двух дочерей, увлекается бегом, футболом, лыжами, сноубордом.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_9">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <ul>
+                    <li>Коуч первых лиц и команд, бизнес-тренер, консультант по управлению.</li>
+                    <li>Основательница Международной Консалтинговой Группы "Живое Дело".</li>
+                    <li>Основательница, автор и ведущая "Международной Интегральной Коучинг Школы", ментор коучей.</li>
+                    <li>Член ICF и ECF федераций коучинга.</li>
+                    <li>Член Международной Ассоциации консультантов по управлению (IMC).</li>
+                    <li>Мама двоих детей, любительница путешествий.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_10">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <p>Templatemonster</p>
+                  <ul>
+                    <li>Основатель международной IT-компании Template Monster. Сайт компании templatemonster.com входит в 2000 самых посещаемых мировых сайтов по версии Alexa.</li>
+                    <li>Основатель Weblium.com – первого украинского конструктора сайтов.</li>
+                    <li>Основатель всеукраинского центра волонтеров Peoplesproject.</li>
+                    <li>Отец 4 детей, любитель лазерного пейнтбола, стрельбы в тире, рыбалки</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_11">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <p>Эксперт по управлению онлайн репутацией</p>
+                  <ul>
+                    <li>Управляющий партнер в агентстве SERM (Search Engine Reputation Management), комплексное управление онлайн-репутацией.</li>
+                    <li>Основатель сети ресторанов быстрого питания BurgerBoom.</li>
+                    <li>Глава партии "Самопомощь" в Дарницкой районе Киева.</li>
+                    <li>Экс-директор по маркетингу и развитию в интернет-издании «Обозреватель».</li>
+                    <li>Отец 2 детей, активный участник беговых и плавательных марафонов.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_12">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <ul>
+                    <li>Сооснователь мультифункциональных пространств #ПеремогаSpace.</li>
+                    <li>Соучредитель Киевского хаба Global Shapers (глобальной инициативы Всемирного экономического форума (WEF).</li>
+                    <li>Экс-заместитель министра экологии и природных ресурсов Украины.</li>
+                    <li>Сооснователь и активист инициативы ReThink.</li>
+                    <li>Социальный инвестор Urban Space 500.</li>
+                    <li>Окончила программу для государственных служащих в Школе государственного управления Джона Ф. Кеннеди, Гарвардский университет (JFK School of Government, Harvard University).</li>
+                    <li>Мама 7-летнего Алексея, увлечена латиноамериканскими танцами.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_13">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <ul>
+                    <li>Заместитель генерального директора по развитию бизнеса ПАО "Укрпошта".</li>
+                    <li>Экс – директор по обслуживанию клиентов в "Нова Пошта".</li>
+                    <li>Экс – директором по развитию в компании “НИКО”. Во время его работы в "НИКО" в 2004-2008 гг. торговый дом удерживал почётное звание “Импортер №1”, а розничная дилерская сеть дома стала одним из лидеров национального рынка.</li>
+                    <li>Работал коммерческим директором "Киевэнерго".</li>
+                    <li>Занимался продажами и маркетингом в "ДТЭК Энерго".</li>
+                    <li>Главное хобби – дети, любитель командных видов спорта.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_14">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <p>Основательница Международного саммита мэров.</p>
+                  <p>Телеведущая шоу «Громада на мільйон».</p>
+                  <p>Руководитель программы местного экономического развития Western NIS Enterprise Fund. В рамках фонда Ирина поддержала следующие проекты:</p>
+                  <ul>
+                    <li>1991 – инкубатор проектов на основе открытых данных</li>
+                    <li>Школа урбанистики CANactions</li>
+                  </ul>
+                  <p>Является членом Ассоциации “Професійний Уряд”</p>
+                  <p>Много путешествует, ведёт блог про города, увлекается плаванием и TRX.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_15">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <ul>
+                    <li>Основатель «Panna group».</li>
+                    <li>Экс-генеральный директор «Сушия». За восемь лет работы в этой компании Роману удалось увеличить сеть с 9 заведений до 50 в 12 городах Украины, что позволило компании «Сушия» стать самой крупной сетью ресторанов японской кухни в стране.</li>
+                    <li>Роман вошел в список успешных топ-менеджеров до 35 лет по рейтингу спецпроекта «Инвестгазеты», а также в рейтинг ТОП-100 топ-менеджеров Украины.</li>
+                    <li>Отец 2 сыновей, организатор социального проекта «Киллометры добра», участник беговых марафонов и автомобильных гонок.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_16">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <ul>
+                    <li>Совладелец НПП «Биотестлаб», лидер в производстве вакцин и препаратов для с/х животных.</li>
+                    <li>Руководитель бизнес-направления животноводства, с/х кооперации в АгроветАтлантик групп.</li>
+                    <li>Член Agro.Reforms.UA., сотрудничал с МинАПК по реформированию законодательства и системы госконтроля в области сельского хозяйства.</li>
+                    <li>Отец 2 детей, увлекается футболом, теннисом, шахматами и сальсой.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
+          <!-- begin modal -->
+          <div class="modal" data-target-modal="modal_17">
+            <button class="modal__close js-modal-close">
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__in">
+              <div class="modal__left">
+                <div class="modal__pic">
+                  <img src="img/mentors/pic_2.png" alt="">
+                </div>
+                <div class="modal__form">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
+                    </div>
+                    <div class="input">
+                      <label for="phone">Мобильный телефон</label>
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
+                    </div>
+                    <button type="submit" class="button">Я с вами</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__right">
+                <div class="modal__info">
+                  <ul>
+                    <li>Собственник группы компаний "Консорциум Сатурн".</li>
+                    <li>Компания более 18 лет успешно работает на рынке услуг безопасности и объединяет 6 компаний, среди которых «Сатурн-К», «Комплексные системы безопасности и развития», «Эксперт Секьюрити», предлагающие на территории Украины полный комплекс услуг в сфере безопасности и автоматизации</li>
+                    <li>Отец двух дочерей, активный участник беговых марафонов, любитель горных лыж, практикует йогу, увлекается живописью, пишет стихи, изучает секреты здорового долголетия.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal -->
         </section>
         <!-- end mentors -->
         <!-- begin faq -->
-        <section class="section faq">
+        <section class="section faq" id="faq">
           <div class="l">
             <div class="faq__in">
               <h2 class="title">FAQ</h2>
               <div class="faq__list">
                 <!-- begin f-item -->
-                <div class="f-item">
-                  <h3 class="f-item__title"><span class="orange">1.</span> Как стать участником сообщества?</h3>
-                  <div class="f-item__list">
+                <div class="f-item js-a">
+                  <h3 class="f-item__title js-a-title"><span class="orange">1.</span> Как стать участником сообщества?</h3>
+                  <div class="f-item__list js-a-content">
                     <ul>
-                      <li>Заполнить <a href="">форму</a></li>
+                      <li>Заполнить <a href="#register">форму</a></li>
                       <li>Встреча-знакомство с основателем сообщества</li>
                     </ul>
                   </div>
                 </div>
                 <!-- end f-item -->
                 <!-- begin f-item -->
-                <div class="f-item">
-                  <h3 class="f-item__title"><span class="orange">2.</span> Какие критерии отбора?</h3>
-                  <div class="f-item__list">
+                <div class="f-item js-a">
+                  <h3 class="f-item__title js-a-title"><span class="orange">2.</span> Какие критерии отбора?</h3>
+                  <div class="f-item__list js-a-content">
                     <ul>
                       <li>Быть предпринимателем и соответствовать ценностям сообщества</li>
                       <li>Стремиться к росту бизнеса</li>
@@ -424,9 +1145,9 @@
                 </div>
                 <!-- end f-item -->
                 <!-- begin f-item -->
-                <div class="f-item">
-                  <h3 class="f-item__title"><span class="orange">3.</span> Есть ли возможность пробного посещения мероприятий</h3>
-                  <div class="f-item__list">
+                <div class="f-item js-a">
+                  <h3 class="f-item__title js-a-title"><span class="orange">3.</span> Есть ли возможность пробного посещения мероприятий</h3>
+                  <div class="f-item__list js-a-content">
                     <ul>
                       <li>Вы можете единоразово посетить открытый пробный формат Friendly Board, а также панельную дискуссию для знакомства с участниками сообщества</li>
                       <li>Основные мероприятия сообщества (Friendly Board) проводятся в закрытом доверительном формате, поэтому на них допускаются только действительные участники сообщества</li>
@@ -440,7 +1161,7 @@
         </section>
         <!-- end faq -->
         <!-- begin form -->
-        <section class="section form" style="background-image: url('img/form-bg.jpg');">
+        <section class="section form" id="register" style="background-image: url('img/form-bg.jpg');">
           <div class="l">
             <div class="form__in">
               <h2 class="form__title title">Регистрируйтесь и получите ответы на Ваши вопросы</h2>
@@ -449,16 +1170,17 @@
                   <p>Заполните форму и с вами свяжется представитель сообщества</p>
                 </div>
                 <div class="form-box__in">
-                  <form action="" class="js-contact-form">
-                    <div class="input is-valid">
-                      <label for="fullname">Имя и фамилия</label>
-                      <input type="text" name="fullname">
+                  <form action="" class="js-form">
+                    <div class="input">
+                      <label for="name">Имя и фамилия</label>
+                      <input type="text" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
                     </div>
-                    <div class="input is-invalid">
+                    <div class="input">
                       <label for="phone">Мобильный телефон</label>
-                      <input type="text" name="phone">
+                      <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
                     </div>
                     <button type="submit" class="button">Отправить анкету</button>
+                    <div class="form-success">Ваша заявка успешно отправлена!</div>
                   </form>
                 </div>
               </div>
@@ -507,7 +1229,7 @@
           </div>
         </section>
         <!-- end contacts -->
-        <a href="" class="scroll-up">
+        <a href="#statistics" class="scroll-up">
           <svg class="icon icon-back">
             <use xlink:href="img/sprite.svg#icon-back"></use>
           </svg>
@@ -523,9 +1245,9 @@
               </a>
             </div>
             <div class="footer__form">
-              <form action="" class="js-callback-form">
+              <form action="" class="js-form">
                 <div class="input input_special">
-                  <input type="text" name="callback" placeholder="Введите номер телефона">
+                  <input type="text" name="phone" placeholder="Введите номер телефона" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
                   <button type="submit" class="button">Перезвоните мне</button>
                 </div>
               </form>

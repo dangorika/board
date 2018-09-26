@@ -1,5 +1,5 @@
 <!-- begin header -->
-<header class="header">
+<header class="header js-header">
     <div class="l">
         <div class="header__in">
             <!-- begin header__logo -->
@@ -13,11 +13,11 @@
             <!-- begin header__nav -->
             <div class="header__nav">
                 <nav class="nav">
-                    <a href="#">Статистика</a>
-                    <a href="#">Ценности</a>
-                    <a href="#">Почему Board</a>
-                    <a href="#">Менторы</a>
-                    <a href="#">FAQ</a>
+                    <a href="#statistics">Статистика</a>
+                    <a href="#values">Ценности</a>
+                    <a href="#reasons">Почему Board</a>
+                    <a href="#mentors">Менторы</a>
+                    <a href="#faq">FAQ</a>
                     <a href="tel:+380957512095">
                         {{ mixins.icon('phone') }}
                         +38(095)75-12-095
@@ -25,6 +25,18 @@
                 </nav>
             </div>
             <!-- end header__nav -->
+
+            <!-- begin header__burger -->
+            <div class="header__burger">
+                <button class="burger js-burger">
+                    <span class="burger__in">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+            <!-- end header__burger -->
         </div>
     </div>
 </header>

@@ -1,5 +1,5 @@
 <!-- begin form -->
-<section class="section form" style="background-image: url('img/form-bg.jpg');">
+<section class="section form" id="register" style="background-image: url('img/form-bg.jpg');">
     <div class="l">
         <div class="form__in">
             <h2 class="form__title title">Регистрируйтесь и получите ответы на Ваши вопросы</h2>
@@ -9,16 +9,17 @@
                     <p>Заполните форму и с вами свяжется представитель сообщества</p>
                 </div>
                 <div class="form-box__in">
-                    <form action="" class="js-contact-form">
-                        <div class="input is-valid">
-                            <label for="fullname">Имя и фамилия</label>
-                            <input type="text" name="fullname">
+                    <form action="" class="js-form">
+                        <div class="input">
+                            <label for="name">Имя и фамилия</label>
+                            <input type="text" name="name" data-required="Это поле обязательно к заполнению." data-minlength="Это поле должно содержать более 2-х символов.">
                         </div>
-                        <div class="input is-invalid">
+                        <div class="input">
                             <label for="phone">Мобильный телефон</label>
-                            <input type="text" name="phone">
+                            <input type="text" name="phone" data-required="Это поле обязательно к заполнению." data-digits="Это поле может содержать только цифры.">
                         </div>
                         <button type="submit" class="button">Отправить анкету</button>
+                        <div class="form-success">Ваша заявка успешно отправлена!</div>
                     </form>
                 </div>
             </div>

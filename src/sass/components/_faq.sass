@@ -5,7 +5,7 @@
 
 .f-item
     $this: &
-    margin-bottom: 36px
+    padding-bottom: 16px
     &.is-active
         #{$this}__title
             color: $black
@@ -15,10 +15,12 @@
         font-weight: normal
         cursor: pointer
         transition: color .25s ease-in-out
-        color: rgba(0,0,0,.5)
+        color: rgba(0,0,0,.33)
         &:hover
             color: $black
     &__list
+        +xs
+            font-size: 14px
         ul
             padding-left: 16px
         li
