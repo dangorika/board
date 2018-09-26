@@ -9,29 +9,35 @@
     border-radius: 100px
     text-decoration: none
     border: 1px solid $orange
-    background: transparent
+    background: $orange
     color: #fff
     font-size: 18px
     white-space: nowrap
-    transition: color .4s
+    transition: color .4s, background .4s 0s
     +md
         font-size: 16px
         padding: 14px 32px
     &:before
         content: ""
-        +coverdiv
+        position: absolute
+        width: 102%
+        height: 106%
+        top: -3%
+        left: -1%
         transform: translateX(0) skew(0)
         transition: transform .4s
         background: $orange
         z-index: -2
     &:hover
         color: $orange
+        background: transparent
         &:before
             transform: translateX(-120%) skew(-45deg)
     &_special
         padding: 6px 12px
         font-size: 14px
         border-color: #fff
+        background: transparent
         +md
             font-size: 12px
             padding: 8px 12px

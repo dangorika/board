@@ -1,4 +1,4 @@
-import { WIN } from './_global';
+import { WIN, DETECT } from './_global';
 
 export default class Video {
   constructor(el) {
@@ -7,11 +7,13 @@ export default class Video {
   }
 
   _init() {
-    WIN.on('load', e => {
-      console.log(this.video);
-      const src = this._getSource();
-      this.video.attr('src', src);
-    });
+    console.log(DETECT.os());
+    if (DETECT.os() !== 'iOS') {
+      WIN.on('load', e => {
+        const src = this._getSource();
+        this.video.attr('src', src);
+      });
+    }
   }
 
   _getSource() {
