@@ -1,4 +1,5 @@
 .modal
+    $this: &
     position: fixed
     top: 0
     left: 0
@@ -24,6 +25,16 @@
         +coverdiv
         background: rgba(0,0,0,.75)
         z-index: 0
+    &_video
+        #{$this}__in
+            max-width: 960px
+            overflow: hidden
+            margin: 0 auto
+            display: flex
+            align-items: center
+            background: none
+            align-self: center
+            height: auto
     &__close
         appearance: none
         display: block
@@ -49,11 +60,14 @@
         .icon
             fill: #fff
         &_special
-            top: -32px
-            right: -32px
+            top: 8px
+            right: 8px
+            +md
+                top: 8px
+                right: 8px
             +xs
-                top: -22px
-                right: -22px
+                top: 8px
+                right: 8px
     &__in
         position: relative
         z-index: 1
@@ -116,9 +130,10 @@
         position: relative
         width: 100%
         height: 0
-        padding-top: 45%
-        +md
-            padding-top: 56.25%
+        padding-top: 56.25%
+        overflow: hidden
+        // +md
+        //     padding-top: 56.25%
         iframe
             +coverdiv
     .input
