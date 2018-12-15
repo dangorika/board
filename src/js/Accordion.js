@@ -19,8 +19,6 @@ export default class Accordion {
   _toggle(e) {
     this.targetATitle = $(e.currentTarget).closest('.js-a');
     this.targetAContent = this.targetATitle.find('.js-a-content');
-    // $('.js-a-content').slideUp(400);
-    // $('.js-a').removeClass('is-active');
     this.targetATitle.toggleClass('is-active');
     this.targetAContent.slideToggle(400);
   }

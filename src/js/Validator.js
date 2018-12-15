@@ -29,7 +29,6 @@ export default class Validator {
   }
 
   _init() {
-    console.log(this.form);
 
     this._validate();
   }

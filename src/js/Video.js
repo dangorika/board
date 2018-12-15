@@ -7,7 +7,6 @@ export default class Video {
   }
 
   _init() {
-    console.log(DETECT.os());
     if (DETECT.os() !== 'iOS') {
       WIN.on('load', e => {
         const src = this._getSource();

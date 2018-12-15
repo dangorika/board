@@ -3,7 +3,8 @@ export default class Show {
     this.show = $(el);
     this.button = this.show.find('.js-s-button');
     this.content = this.show.find('.js-s-content');
-    this.height = this.content.height();
+    this.height = this.content.outerHeight(true);
+    this.startHeight = this.content.children().first().outerHeight(true)*2 + 36;
     this.currentText = this.button.html();
     this._init();
   }
@@ -15,7 +16,7 @@ export default class Show {
 
   _close() {
     this.content.animate({
-      height: 592
+      height: this.startHeight
     });
   }
 

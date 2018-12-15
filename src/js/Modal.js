@@ -15,7 +15,6 @@ export default class Modal {
 
   _open(e) {
     this.targetModal = $(e.currentTarget).data('modal');
-    console.log(this.targetModal);
     $(`[data-target-modal="${this.targetModal}"]`).addClass('is-open');
     BODY.addClass('is-fixed');
   }
